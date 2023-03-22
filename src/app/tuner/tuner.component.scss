@@ -1,0 +1,243 @@
+@import "../colors.scss";
+.avatar-container{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 15vh;
+  left:35vh;
+}
+.info{
+  position: fixed;
+  height: 40px;
+  line-height: 0px;
+  text-align: center;
+  top:2vh;
+  left: 5vh;
+  .frequency{
+    border: 2px dotted #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+}
+.start-button{
+  background-color: #112;
+  position: absolute;
+  bottom:0vh;
+  padding-bottom: 1vh;
+  width: 100vw;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 991;
+  button{
+    margin:0 10px;
+  }
+  .action{
+    height: 50px!important;
+    width: 50px!important;
+    line-height: 50px!important;
+    span{
+      font-size: 20px;
+      line-height: 0px;
+    }
+    img{
+      height: 15px;
+    }
+  }
+}
+.logo{
+  position:absolute;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  img{
+    margin: 30px auto;
+    height: 70px;
+    width: 70px;
+  }
+}
+.string-name{
+  font-size: 12px;
+  text-align: center;
+}
+.palette {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  //background-image: url('https://st.depositphotos.com/1003362/5105/i/950/depositphotos_51059569-stock-photo-texture-of-ash-tree.jpg');
+  background-size: 200%;
+  background-blend-mode: multiply;
+  overflow: visible;
+  width: 100%;
+  background-color: #111119;
+  .freth1 {
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    background-color: #ccc;
+  }
+  .freth {
+    position: absolute;
+    height: 5px;
+    border-radius: 2.5px;
+    width: 100%;
+    background-color: #999;
+    box-shadow: inset 0px -2px 2px #fff;
+  }
+  .first {
+    top: 130px;
+  }
+  .second {
+    top: 250px;
+  }
+  .third {
+    top: 370px;
+  }
+  .fourth {
+    top: 490px;
+  }
+}
+.palette::after{
+  content: "";
+  background-color: #0015;
+  height: 100%;
+  width: 100%;
+  transform-origin:0 0 ;
+  transform: skewY(75deg);
+  position:absolute;
+  left: 100%;
+}
+.distance {
+  height: 100px;
+  .indicator {
+    position: relative;
+    top: -7px;
+    margin: 0 auto;
+    transform-origin: 50% 100%;
+    color: $red;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    transition: all 0.5s;
+    fa-icon {
+    
+    }
+  }
+  .checked {
+    color: $green;
+    transform: scale(1.5) !important;
+  }
+  .indicator-line {
+    box-sizing: border-box;
+    height: 2px;
+    border-radius: 1px;
+    width: 100%;
+    background-color: #999;
+    .dash {
+      position: relative;
+      top: -.5px;
+      height: 2px;
+      border-radius: 0.5px;
+      max-width: 1px;
+      background-color: #999;
+    }
+  }
+}
+.notes-check {
+}
+.check-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  svg {
+    width: 100%;
+  }
+  .check {
+    transition: fill 0.5s 1s, stroke-dashoffset 1.5s;
+    fill: #0f00;
+    stroke-width: 10;
+    r: 30;
+    cx: 50;
+    cy: 50;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200%;
+    stroke-linecap: round;
+    // box-shadow:inset 2px 2px 6px #fff7, 2px 2px 5px #0005,inset -2px -2px 6px #0005;
+  }
+  .checked {
+    stroke: $green;
+    fill: $green;
+    stroke-dashoffset: 0%;
+  }
+}
+.string {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 900;
+  svg {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(4px 0px 1px #0005);
+    .curve {
+      d: path('m15 0 Q 15 225 15 800');
+      filter: drop-shadow(0px 0px 0px #fff);
+      transition: all 2s;
+    }
+    .checked {
+      filter: drop-shadow(0px 0px 2px #fff0);
+    }
+    .strummed {
+      animation: vibrate 0.1s 20;
+    }
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    d: path('m15 0 Q 15 225 15 800');
+  }
+  50% {
+    d: path('m15 0 Q 7 225 15 800');
+  }
+  100% {
+    d: path('m15 0 Q 15 225 150850');
+  }
+}
+.note-container {
+  margin: 0;
+  min-height: 120px;
+  margin-bottom: 30px;
+  .note {
+    box-sizing: unset;
+    transform: rotate(20deg);
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+    transition: transform 0.4s, border-color 0.2s 0.2s, border-width 0.2s;
+    border-width: 10px;
+    border-color: $red;
+    border-style: dotted;
+    border-radius: 50%;
+    stroke-dashoffset: 100%;
+    height: 120px;
+    width: 120px;
+    p {
+      transition: all 0.4s;
+      line-height: 50px;
+      transform: rotate(-20deg);
+    }
+  }
+  .right {
+    border-width: 4px;
+    border-color: $green;
+    border-style: solid;
+    transform: rotate(0deg);
+    p {
+      line-height: 50px;
+      transform: rotate(0deg);
+    }
+  }
+}

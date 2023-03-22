@@ -1,0 +1,330 @@
+<div class="container">
+  <div class="avatar-container"  [ngStyle.lt-md]="{'left':'-40px'}">
+    <app-avatar></app-avatar>
+  </div>
+  <div
+    class="content"
+    fxFlex="100"
+    fxFlexOffset="0"
+    fxFlexOffset.gt-xs="25"
+    fxFlex.gt-xs="50"
+    fxLayout="row wrap"
+    fxFlex.gt-md="30"
+    fxFlexOffset.gt-md="35"
+  >
+  <div class="info">
+    <p>
+      <span>
+        {{tuningName}} 
+      </span>
+      <span class="frequency">
+        {{standard}}Hz
+      </span>
+    </p>
+  </div>
+    <div
+      class="distance"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+      fxFlex="50"
+      fxFlexOffset="25"
+    >
+      <div
+        class="indicator"
+        fxFlex="100"
+        [class.checked]="indicator"
+        [ngStyle]="{transform:'translate('+ margin * 100 + 'px'+')'}"
+      >
+        <fa-icon [icon]="faLocation"></fa-icon>
+      </div>
+      <div
+        class="indicator-line"
+        fxFlex="100"
+        fxLayoutAlign="space-between"
+        fxFlexLayout="row wrap"
+      >
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+        <div class="dash" fxFlex></div>
+      </div>
+    </div>
+    <div
+      class="note-container"
+      fxLayoutAlign="center center"
+      fxFlex="50"
+      fxFlexOffset="25"
+    >
+      <div
+        class="note"
+        [class.right]="
+          tuning.indexOf(note)!=-1
+        "
+        fxLayoutAlign="center center"
+        *ngIf="note"
+      >
+        <p>
+          {{ note }}
+        </p>
+      </div>
+    </div>
+    <div class="notes-check" fxFlex="100">
+      <div
+        fxFlex="50"
+        fxFlexOffset="25"
+        fxLayoutAlign="space-around"
+        class="check-container"
+      >
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              r="5"
+              stroke-width="3"
+              stroke="red"
+              [class.checked]="strings.string0"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[0]}}
+          </div>
+        </div>
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              r="5px"
+              stroke-width="3px"
+              stroke="red"
+              [class.checked]="strings.string1"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[1]}}
+          </div>
+        </div>
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              r="5px"
+              stroke-width="3px"
+              stroke="red"
+              [class.checked]="strings.string2"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[2]}}
+          </div>
+        </div>
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              r="5px"
+              stroke-width="3px"
+              stroke="red"
+              [class.checked]="strings.string3"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[3]}}
+          </div>
+        </div>
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              stroke-width="3px"
+              stroke="red"
+              [class.checked]="strings.string4"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[4]}}
+          </div>
+        </div>
+        <div fxFlex width="100%">
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            position="relative"
+            height="30px"
+          >
+            <circle
+              r="5px"
+              stroke-width="3px"
+              stroke="red"
+              [class.checked]="strings.string5"
+              class="check"
+            ></circle>
+          </svg>
+          <div class="string-name">
+            {{tuning[5]}}
+          </div>
+        </div>
+        <!--
+      <div [class.checked]="strings.E4" class="check"></div>
+      <div [class.checked]="strings.A4" class="check"></div>
+      <div [class.checked]="strings.D5" class="check"></div>
+      <div [class.checked]="strings.G5" class="check"></div>
+      <div [class.checked]="strings.B5" class="check"></div> 
+      <div [class.checked]="strings.E6" class="check"></div>
+
+    -->
+      </div>
+    </div>
+
+    <div fxFlex="50" fxFlexOffset="25">
+      <div class="palette">
+        <div class="logo">
+          <img src="../../assets/foreground.svg" alt="" />
+        </div>
+        <div class="freth1"></div>
+        <div class="freth first"></div>
+        <div class="freth second"></div>
+        <div class="freth third"></div>
+        <div class="freth fourth"></div>
+        <div class="string">
+          <svg
+            class="svg"
+            height="100%"
+            width="100%"
+            stroke-width="2"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="ref" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fff" stop-opacity="1" />
+                <stop offset="100%" stop-color="#fff" stop-opacity="1" />
+              </linearGradient>
+            </defs>
+            <path
+              stroke="#a38d4e"
+              id="E4"
+              [class.checked]="strings.string0"
+              [class.strummed]="note == tuning[0]"
+              class="curve"
+            />
+          </svg>
+        </div>
+        <div class="string">
+          <svg
+            stroke="#a38d4e"
+            stroke-width="1.6"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="A4"
+              [class.checked]="strings.string1"
+              [class.strummed]="note == tuning[1]"
+              class="curve"
+            />
+          </svg>
+        </div>
+        <div class="string">
+          <svg
+            height="100%"
+            width="100%"
+            stroke="#a38d4e"
+            stroke-width="1.4"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+             id="D5" 
+             [class.strummed]="note == tuning[2]"
+             class="curve" />
+          </svg>
+        </div>
+        <div class="string">
+          <svg
+            height="100%"
+            width="100%"
+            stroke="#fff5"
+            stroke-width="1.2"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+            id="G5" 
+            [class.strummed]="note == tuning[3]"
+            class="curve" />
+          </svg>
+        </div>
+        <div class="string">
+          <svg
+            height="100%"
+            width="100%"
+            stroke="#fff5"
+            stroke-width="1"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="B5"
+              [class.strummed]="note == tuning[4]"
+              class="curve" />
+          </svg>
+        </div>
+        <div class="string">
+          <svg
+            height="100%"
+            width="100%"
+            stroke="#fff5"
+            stroke-width="0.8"
+            fill="none"
+            viewBox="0 0 30 800"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+             id="E6"
+             [class.strummed]="note == tuning[5]"
+             class="curve" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="start-button">
+  <button mat-fab color="accent" class="action" style="z-index:999 ;" (click)="openBottomSheet()" > <span>Hz</span></button>
+  <button *ngIf="!playing" mat-fab color="accent" style="z-index:999 ;" (click)="start()"> <fa-icon [icon]="faPlay"></fa-icon></button>
+  <button *ngIf="playing" mat-fab color="accent" style="z-index:999 ;" (click)="refresh()"> <fa-icon [icon]="faRotateRight"></fa-icon></button>
+  <button mat-fab color="accent" class="action" style="z-index:999 ;" (click)="openTuning()" > <img src="../../assets/strings-icon.svg" alt=""></button>
+</div>
