@@ -1,1 +1,8 @@
 node_modules
+dist
+android
+src
+angular.json
+capacitor.config.ts
+package-lock.json
+package.jsontsconfig.json
