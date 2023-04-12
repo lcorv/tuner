@@ -1,11 +1,9 @@
 node_modules
-dist
+.angular
 android
+dist
 src
 angular.json
 capacitor.config.ts
-package-lock.json
-package.jsontsconfig.json
-.angular
-node_modules
-
+package.json
+ts.config.json

@@ -37,4 +37,3 @@ import { AvatarComponent } from './avatar/avatar.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
