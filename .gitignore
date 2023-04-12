@@ -6,3 +6,6 @@ angular.json
 capacitor.config.ts
 package-lock.json
 package.jsontsconfig.json
+.angular
+node_modules
+
