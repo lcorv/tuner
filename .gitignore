@@ -2,8 +2,4 @@ node_modules
 .angular
 android
 dist
-src
-angular.json
 capacitor.config.ts
-package.json
-ts.config.json
